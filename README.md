@@ -5,14 +5,18 @@ smol's hand-built Neovim 0.12 config: native `vim.pack`, no distro, a plugin add
 when something hurt without it, and headless tests for what it does.
 
 <!-- smol:readme hud -->
+<a href=".github/readme/hud.svg#gh-dark-mode-only">
 <picture>
   <source media="(max-width: 600px)" srcset=".github/readme/hud-narrow.svg">
-  <img src=".github/readme/hud.svg#gh-dark-mode-only" width="100%" alt="Status: in daily use. 1 commits. Lua 100 %. As of 2026-10-13.">
+  <img src=".github/readme/hud.svg" width="100%" alt="Status: in daily use. 2 commits. Lua 100 %. As of 2026-10-13.">
 </picture>
+</a>
+<a href=".github/readme/hud-light.svg#gh-light-mode-only">
 <picture>
   <source media="(max-width: 600px)" srcset=".github/readme/hud-narrow-light.svg">
-  <img src=".github/readme/hud-light.svg#gh-light-mode-only" width="100%" alt="Status: in daily use. 1 commits. Lua 100 %. As of 2026-10-13.">
+  <img src=".github/readme/hud-light.svg" width="100%" alt="Status: in daily use. 2 commits. Lua 100 %. As of 2026-10-13.">
 </picture>
+</a>
 <!-- /smol:readme -->
 
 ## <img src=".github/readme/glyph-start.svg" height="24" alt=""> Start here
