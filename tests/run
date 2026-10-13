@@ -1,0 +1,55 @@
+#!/bin/sh
+# Run every tests/*.lua in headless nvim against this repo's config, with every XDG
+# dir (the runtime dir too) in a temp dir: nothing real is written.
+# NVIM_SMOL_TEST=1 makes init.lua packadd the plugins from the real site dir instead of
+# calling vim.pack, and skips nvim-treesitter's install().
+set -eu
+
+repo=$(cd "$(dirname "$0")/.." && pwd)
+
+# Read the real site dir before overriding XDG_DATA_HOME; under NVIM_APPNAME, that
+# name's site (a first start installed the plugins there).
+NVIM_SMOL_SITE=${XDG_DATA_HOME:-$HOME/.local/share}/${NVIM_APPNAME:-nvim}/site
+export NVIM_SMOL_SITE
+
+tmp=$(mktemp -d)
+mkdir -p "$tmp/config" "$tmp/data" "$tmp/state" "$tmp/cache" "$tmp/run"
+chmod 700 "$tmp/run"
+ln -s "$repo" "$tmp/config/${NVIM_APPNAME:-nvim}"
+export XDG_CONFIG_HOME="$tmp/config" XDG_DATA_HOME="$tmp/data"
+export XDG_STATE_HOME="$tmp/state" XDG_CACHE_HOME="$tmp/cache"
+# prettierd keeps one daemon per working dir, registered under XDG_RUNTIME_DIR: with a
+# temp one, the daemons a test starts are stopped here and the real ones are never seen.
+export XDG_RUNTIME_DIR="$tmp/run"
+
+cleanup() {
+  if [ -d "$tmp/run/.prettierd" ]; then
+    prettierd stop >/dev/null 2>&1 || true
+  fi
+  rm -rf "$tmp"
+}
+trap cleanup EXIT INT TERM
+export NVIM_SMOL_TEST=1
+
+# A test fails by throwing; the wrapper turns that into `cquit 1`.
+wrapper='local ok, err = pcall(dofile, vim.env.NVIM_SMOL_TEST_FILE)
+if not ok then
+  io.stderr:write("\n" .. tostring(err) .. "\n")
+  vim.cmd("cquit 1")
+end
+vim.cmd("qall!")'
+
+failed=0
+# publish/ is private: its test runs only where it exists.
+for file in "$repo"/tests/*.lua "$repo"/publish/*.lua; do
+  [ -e "$file" ] || continue
+  name=$(basename "$file")
+  if NVIM_SMOL_TEST_FILE=$file nvim --headless -c "lua $wrapper" </dev/null 2>"$tmp/err"; then
+    echo "ok   $name"
+  else
+    echo "FAIL $name"
+    sed 's/^/     /' "$tmp/err"
+    failed=1
+  fi
+done
+exit "$failed"

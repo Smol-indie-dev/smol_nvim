@@ -1,0 +1,6 @@
+name = "smol_nvim"
+tagline = "native packages · smol palette · tested"
+status = "in daily use"
+status_role = "ok"
+footer = "MIT"
+slogan = "SMOL CODE, BIG FUN"

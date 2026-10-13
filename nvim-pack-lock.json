@@ -1,0 +1,53 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "8219b58f1c11a2fb1644d3c7116c509fa8348ec0",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "blink.lib": {
+      "rev": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa",
+      "src": "https://github.com/saghen/blink.lib"
+    },
+    "conform.nvim": {
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "fzf-lua": {
+      "rev": "ed0e0ead1789ee349cbf025900931fb402b1e05e",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "mini.icons": {
+      "rev": "f642e3ba8c12afbc8f32f6d77ef6597eac56786f",
+      "src": "https://github.com/nvim-mini/mini.icons"
+    },
+    "neogit": {
+      "rev": "70708be9664b7fcdd010eb07bdc3ebc9311c2027",
+      "src": "https://github.com/NeogitOrg/neogit"
+    },
+    "nvim-lspconfig": {
+      "rev": "c59fc922f718fa055f69f5f3bc888f23211571eb",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "e289100ff98969e118c702199d88b764ce9e7fdf",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
+      "src": "https://github.com/folke/snacks.nvim"
+    }
+  }
+}
