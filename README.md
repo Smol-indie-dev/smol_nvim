@@ -8,13 +8,13 @@ when something hurt without it, and headless tests for what it does.
 <a href=".github/readme/hud.svg#gh-dark-mode-only">
 <picture>
   <source media="(max-width: 600px)" srcset=".github/readme/hud-narrow.svg">
-  <img src=".github/readme/hud.svg" width="100%" alt="Status: in daily use. 2 commits. Lua 100 %. As of 2026-10-13.">
+  <img src=".github/readme/hud.svg" width="100%" alt="Status: in daily use. 3 commits. Lua 100 %. As of 2026-10-14.">
 </picture>
 </a>
 <a href=".github/readme/hud-light.svg#gh-light-mode-only">
 <picture>
   <source media="(max-width: 600px)" srcset=".github/readme/hud-narrow-light.svg">
-  <img src=".github/readme/hud-light.svg" width="100%" alt="Status: in daily use. 2 commits. Lua 100 %. As of 2026-10-13.">
+  <img src=".github/readme/hud-light.svg" width="100%" alt="Status: in daily use. 3 commits. Lua 100 %. As of 2026-10-14.">
 </picture>
 </a>
 <!-- /smol:readme -->
@@ -184,6 +184,8 @@ lists the hunk keys and `K`.
 <img src=".github/readme/divider.svg" width="100%" alt="">
 
 <p align="center">
-  <img src=".github/readme/logo.svg" height="48" alt="smol"><br>
+  <a href="https://site.smolindiedev.workers.dev/type-escape/"
+     title="I'm once again asking you to let me quit the text editor.">
+    <img src=".github/readme/logo.svg" height="48" alt="smol"></a><br>
   MIT · SMOL CODE, BIG FUN
 </p>
